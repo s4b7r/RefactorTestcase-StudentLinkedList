@@ -4,17 +4,17 @@
 #include "io.h"
 #include "LinkedList.h"
 
-void insert_element_into_list(struct linked_list * list, struct linked_list_element * element) {
+void insert_element_into_list(struct linked_list * list, LinkedList_Element * element) {
     element->next = list->head;
     list->head = element;
 }
 
-void remove_element_from_list(struct linked_list * list, struct linked_list_element * element) {
-    struct linked_list_element * previous_element;
+void remove_element_from_list(struct linked_list * list, LinkedList_Element * element) {
+    LinkedList_Element * previous_element;
 
     if (list->head == element) {
         list->head = element->next;
-        free(element);
+        delete element;
     }
     else {
         previous_element = list->head;
@@ -23,12 +23,12 @@ void remove_element_from_list(struct linked_list * list, struct linked_list_elem
         }
 
         previous_element->next = element->next;
-        free(element);
+        delete element;
     }
 }
 
-struct linked_list_element * find_student_by_name(struct linked_list * list, char * name) {
-    struct linked_list_element * element;
+LinkedList_Element * find_student_by_name(struct linked_list * list, char * name) {
+    LinkedList_Element * element;
 
     element = list->head;
     while (element != 0 && strcmp(element->name, name) != 0) {
@@ -44,9 +44,9 @@ void remove_student_by_name(struct linked_list * list, char * name) {
 
 
 void insert_student_from_keyboard_sorted_by_matrikel(struct linked_list * list) {
-    struct linked_list_element * new_student;
-    struct linked_list_element * element;
-    struct linked_list_element * previous;
+    LinkedList_Element * new_student;
+    LinkedList_Element * element;
+    LinkedList_Element * previous;
 
     new_student = create_student_from_keyboard();
 

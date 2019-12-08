@@ -5,10 +5,10 @@
 
 #include "io.h"
 
-struct linked_list_element * create_student_from_keyboard() {
-    struct linked_list_element * student;
+LinkedList_Element * create_student_from_keyboard() {
+    LinkedList_Element * student;
 
-    student = (struct linked_list_element *) malloc(sizeof(struct linked_list_element));
+    student = new LinkedList_Element;
 
     printf("Daten eingeben:\n");
     printf("Name: ");
@@ -27,7 +27,7 @@ void insert_student_from_keyboard_into_list(struct linked_list * list) {
     insert_element_into_list(list, create_student_from_keyboard());
 }
 
-void print_student_details(struct linked_list_element * student) {
+void print_student_details(LinkedList_Element * student) {
     printf("Name: %s\n", student->name);
     printf("Matrikelnummer: %d\n", student->matrikel_no);
     printf("Jahr der Immatrikulation: %d\n", student->immat_year);
@@ -45,7 +45,7 @@ char * get_name_from_keyboard(char * store) {
 }
 
 void print_all_students(struct linked_list * list) {
-    struct linked_list_element * element;
+    LinkedList_Element * element;
 
     element = list->head;
     while (element != 0) {
