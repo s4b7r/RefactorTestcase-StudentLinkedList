@@ -9,6 +9,8 @@ public:
     int matrikel_no;
     int immat_year;
     char study[50];
+
+    void fill_from_keyboard();
 };
 
 struct linked_list {

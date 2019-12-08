@@ -9,17 +9,7 @@ LinkedList_Element * create_student_from_keyboard() {
     LinkedList_Element * student;
 
     student = new LinkedList_Element;
-
-    printf("Daten eingeben:\n");
-    printf("Name: ");
-    scanf("%s", student->name);
-    printf("Matrikelnummer: ");
-    scanf("%d", &(student->matrikel_no));
-    printf("Jahr der Immatrikulation: ");
-    scanf("%d", &(student->immat_year));
-    printf("Studiengang: ");
-    scanf("%s", student->study);
-
+    student->fill_from_keyboard();
     return student;
 }
 

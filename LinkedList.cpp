@@ -1,5 +1,8 @@
+#define _CRT_SECURE_NO_WARNINGS
+
 #include <stdlib.h>
 #include <string.h>
+#include <stdio.h>
 
 #include "io.h"
 #include "LinkedList.h"
@@ -64,4 +67,16 @@ void insert_student_from_keyboard_sorted_by_matrikel(struct linked_list * list) 
         new_student->next = element;
         previous->next = new_student;
     }
+}
+
+void LinkedList_Element::fill_from_keyboard() {
+    printf("Daten eingeben:\n");
+    printf("Name: ");
+    scanf("%s", this->name);
+    printf("Matrikelnummer: ");
+    scanf("%d", &(this->matrikel_no));
+    printf("Jahr der Immatrikulation: ");
+    scanf("%d", &(this->immat_year));
+    printf("Studiengang: ");
+    scanf("%s", this->study);
 }
