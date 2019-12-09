@@ -20,3 +20,11 @@ Student * Student::create_from_keyboard()
 
     return instance;
 }
+
+void Student::print_details()
+{
+    printf("Name: %s\n", this->name);
+    printf("Matrikelnummer: %d\n", this->matrikel_no);
+    printf("Jahr der Immatrikulation: %d\n", this->immat_year);
+    printf("Studiengang: %s\n", this->study);
+}

@@ -14,10 +14,7 @@ LinkedList_Element::LinkedList_Element(Student * content) :
 }
 
 void LinkedList_Element::print_details() {
-    printf("Name: %s\n", this->content->name);
-    printf("Matrikelnummer: %d\n", this->content->matrikel_no);
-    printf("Jahr der Immatrikulation: %d\n", this->content->immat_year);
-    printf("Studiengang: %s\n", this->content->study);
+    this->content->print_details();
 }
 
 LinkedList_Element::~LinkedList_Element()
