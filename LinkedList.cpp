@@ -6,20 +6,20 @@
 
 #include "LinkedList.h"
 
-void insert_element_into_list(LinkedList * list, LinkedList_Element * element) {
-    element->next = list->head;
-    list->head = element;
+void LinkedList::insert_element_into_list(LinkedList_Element * element) {
+    element->next = this->head;
+    this->head = element;
 }
 
-void remove_element_from_list(LinkedList * list, LinkedList_Element * element) {
+void LinkedList::remove_element_from_list(LinkedList_Element * element) {
     LinkedList_Element * previous_element;
 
-    if (list->head == element) {
-        list->head = element->next;
+    if (this->head == element) {
+        this->head = element->next;
         delete element;
     }
     else {
-        previous_element = list->head;
+        previous_element = this->head;
         while (previous_element->next != element) {
             previous_element = previous_element->next;
         }
@@ -29,10 +29,10 @@ void remove_element_from_list(LinkedList * list, LinkedList_Element * element) {
     }
 }
 
-LinkedList_Element * find_student_by_name(LinkedList * list, char * name) {
+LinkedList_Element * LinkedList::find_student_by_name(char * name) {
     LinkedList_Element * element;
 
-    element = list->head;
+    element = this->head;
     while (element != 0 && strcmp(element->name, name) != 0) {
         element = element->next;
     }
@@ -40,24 +40,24 @@ LinkedList_Element * find_student_by_name(LinkedList * list, char * name) {
     return element;
 }
 
-void remove_student_by_name(LinkedList * list, char * name) {
-    remove_element_from_list(list, find_student_by_name(list, name));
+void LinkedList::remove_student_by_name(char * name) {
+    remove_element_from_list(this->find_student_by_name(name));
 }
 
 
-void insert_student_from_keyboard_sorted_by_matrikel(LinkedList * list, LinkedList_Element * new_student) {
+void LinkedList::insert_student_from_keyboard_sorted_by_matrikel(LinkedList_Element * new_student) {
     LinkedList_Element * element;
     LinkedList_Element * previous;
 
-    element = list->head;
+    element = this->head;
     previous = 0;
     while (element != 0 && element->matrikel_no < new_student->matrikel_no) {
         previous = element;
         element = element->next;
     }
     if (previous == 0) {
-        new_student->next = list->head;
-        list->head = new_student;
+        new_student->next = this->head;
+        this->head = new_student;
     }
     else {
         new_student->next = element;

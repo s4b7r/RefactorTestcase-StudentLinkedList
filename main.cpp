@@ -29,19 +29,19 @@ int main(int argc, char ** argv) {
         switch (input)
         {
         case 1:
-            insert_element_into_list(&list, LinkedList_Element::create_from_keyboard());
+            list.insert_element_into_list(LinkedList_Element::create_from_keyboard());
             break;
         case 2:
-            remove_student_by_name(&list, get_name_from_keyboard(input_string));
+            list.remove_student_by_name(get_name_from_keyboard(input_string));
             break;
         case 3:
-            find_student_by_name(&list, get_name_from_keyboard(input_string))->print_details();
+            list.find_student_by_name(get_name_from_keyboard(input_string))->print_details();
             break;
         case 4:
             list.print_all_elements();
             break;
         case 5:
-            insert_student_from_keyboard_sorted_by_matrikel(&list, LinkedList_Element::create_from_keyboard());
+            list.insert_student_from_keyboard_sorted_by_matrikel(LinkedList_Element::create_from_keyboard());
             break;
         default:
             break;
