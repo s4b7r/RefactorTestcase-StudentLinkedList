@@ -2,7 +2,7 @@
 
 #include <stdio.h>
 
-#include "LinkedList.h"
+#include "LinkedList_Element.h"
 
 LinkedList_Element * LinkedList_Element::create_from_keyboard() {
     return new LinkedList_Element(Student::create_from_keyboard());
