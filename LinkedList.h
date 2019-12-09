@@ -1,5 +1,14 @@
 #pragma once
 
+class Student
+{
+public:
+    char name[50];
+    int matrikel_no;
+    int immat_year;
+    char study[50];
+};
+
 class LinkedList_Element
 {
 public:
@@ -8,11 +17,7 @@ public:
     void print_details();
 
     LinkedList_Element * next;
-
-    char name[50];
-    int matrikel_no;
-    int immat_year;
-    char study[50];
+    Student content;
 };
 
 class LinkedList {
