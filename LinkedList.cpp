@@ -80,3 +80,10 @@ LinkedList_Element * LinkedList_Element::create_from_keyboard() {
 
     return instance;
 }
+
+void LinkedList_Element::print_details() {
+    printf("Name: %s\n", this->name);
+    printf("Matrikelnummer: %d\n", this->matrikel_no);
+    printf("Jahr der Immatrikulation: %d\n", this->immat_year);
+    printf("Studiengang: %s\n", this->study);
+}

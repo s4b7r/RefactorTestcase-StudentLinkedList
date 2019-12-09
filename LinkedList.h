@@ -5,6 +5,8 @@ class LinkedList_Element
 public:
     static LinkedList_Element * create_from_keyboard();
 
+    void print_details();
+
     LinkedList_Element * next;
 
     char name[50];
