@@ -41,7 +41,7 @@ int main(int argc, char ** argv) {
             print_all_students(&list);
             break;
         case 5:
-            insert_student_from_keyboard_sorted_by_matrikel(&list);
+            insert_student_from_keyboard_sorted_by_matrikel(&list, create_student_from_keyboard());
             break;
         default:
             break;

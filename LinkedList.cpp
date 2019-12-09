@@ -4,7 +4,6 @@
 #include <string.h>
 #include <stdio.h>
 
-#include "io.h"
 #include "LinkedList.h"
 
 void insert_element_into_list(struct linked_list * list, LinkedList_Element * element) {
@@ -46,12 +45,9 @@ void remove_student_by_name(struct linked_list * list, char * name) {
 }
 
 
-void insert_student_from_keyboard_sorted_by_matrikel(struct linked_list * list) {
-    LinkedList_Element * new_student;
+void insert_student_from_keyboard_sorted_by_matrikel(struct linked_list * list, LinkedList_Element * new_student) {
     LinkedList_Element * element;
     LinkedList_Element * previous;
-
-    new_student = create_student_from_keyboard();
 
     element = list->head;
     previous = 0;

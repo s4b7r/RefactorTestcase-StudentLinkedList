@@ -21,4 +21,4 @@ void insert_element_into_list(struct linked_list * list, LinkedList_Element * el
 void remove_element_from_list(struct linked_list * list, LinkedList_Element * element);
 LinkedList_Element * find_student_by_name(struct linked_list * list, char * name);
 void remove_student_by_name(struct linked_list * list, char * name);
-void insert_student_from_keyboard_sorted_by_matrikel(struct linked_list * list);
+void insert_student_from_keyboard_sorted_by_matrikel(struct linked_list * list, LinkedList_Element * new_student);
