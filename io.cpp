@@ -11,7 +11,7 @@ char * get_name_from_keyboard(char * store) {
     return store;
 }
 
-void print_all_students(struct linked_list * list) {
+void print_all_students(LinkedList * list) {
     LinkedList_Element * element;
 
     element = list->head;

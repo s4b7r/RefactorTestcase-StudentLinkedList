@@ -6,12 +6,12 @@
 
 #include "LinkedList.h"
 
-void insert_element_into_list(struct linked_list * list, LinkedList_Element * element) {
+void insert_element_into_list(LinkedList * list, LinkedList_Element * element) {
     element->next = list->head;
     list->head = element;
 }
 
-void remove_element_from_list(struct linked_list * list, LinkedList_Element * element) {
+void remove_element_from_list(LinkedList * list, LinkedList_Element * element) {
     LinkedList_Element * previous_element;
 
     if (list->head == element) {
@@ -29,7 +29,7 @@ void remove_element_from_list(struct linked_list * list, LinkedList_Element * el
     }
 }
 
-LinkedList_Element * find_student_by_name(struct linked_list * list, char * name) {
+LinkedList_Element * find_student_by_name(LinkedList * list, char * name) {
     LinkedList_Element * element;
 
     element = list->head;
@@ -40,12 +40,12 @@ LinkedList_Element * find_student_by_name(struct linked_list * list, char * name
     return element;
 }
 
-void remove_student_by_name(struct linked_list * list, char * name) {
+void remove_student_by_name(LinkedList * list, char * name) {
     remove_element_from_list(list, find_student_by_name(list, name));
 }
 
 
-void insert_student_from_keyboard_sorted_by_matrikel(struct linked_list * list, LinkedList_Element * new_student) {
+void insert_student_from_keyboard_sorted_by_matrikel(LinkedList * list, LinkedList_Element * new_student) {
     LinkedList_Element * element;
     LinkedList_Element * previous;
 

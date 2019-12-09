@@ -8,7 +8,7 @@
 #include "io.h"
 
 int main(int argc, char ** argv) {
-    struct linked_list list;
+    LinkedList list;
     int input;
     char input_string[50];
 

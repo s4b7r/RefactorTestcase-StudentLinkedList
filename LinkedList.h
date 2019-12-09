@@ -15,12 +15,13 @@ public:
     char study[50];
 };
 
-struct linked_list {
+class LinkedList {
+public:
     LinkedList_Element * head;
 };
 
-void insert_element_into_list(struct linked_list * list, LinkedList_Element * element);
-void remove_element_from_list(struct linked_list * list, LinkedList_Element * element);
-LinkedList_Element * find_student_by_name(struct linked_list * list, char * name);
-void remove_student_by_name(struct linked_list * list, char * name);
-void insert_student_from_keyboard_sorted_by_matrikel(struct linked_list * list, LinkedList_Element * new_student);
+void insert_element_into_list(LinkedList * list, LinkedList_Element * element);
+void remove_element_from_list(LinkedList * list, LinkedList_Element * element);
+LinkedList_Element * find_student_by_name(LinkedList * list, char * name);
+void remove_student_by_name(LinkedList * list, char * name);
+void insert_student_from_keyboard_sorted_by_matrikel(LinkedList * list, LinkedList_Element * new_student);
