@@ -3,6 +3,8 @@
 class Student
 {
 public:
+    static Student * create_from_keyboard();
+
     char name[50];
     int matrikel_no;
     int immat_year;
@@ -14,10 +16,13 @@ class LinkedList_Element
 public:
     static LinkedList_Element * create_from_keyboard();
 
+    LinkedList_Element(Student * content);
+    ~LinkedList_Element();
+
     void print_details();
 
     LinkedList_Element * next;
-    Student content;
+    Student * content;
 };
 
 class LinkedList {

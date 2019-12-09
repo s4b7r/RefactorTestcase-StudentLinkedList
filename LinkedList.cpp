@@ -33,7 +33,7 @@ LinkedList_Element * LinkedList::find_student_by_name(char * name) {
     LinkedList_Element * element;
 
     element = this->head;
-    while (element != 0 && strcmp(element->content.name, name) != 0) {
+    while (element != 0 && strcmp(element->content->name, name) != 0) {
         element = element->next;
     }
 
@@ -51,7 +51,7 @@ void LinkedList::insert_student_from_keyboard_sorted_by_matrikel(LinkedList_Elem
 
     element = this->head;
     previous = 0;
-    while (element != 0 && element->content.matrikel_no < new_student->content.matrikel_no) {
+    while (element != 0 && element->content->matrikel_no < new_student->content->matrikel_no) {
         previous = element;
         element = element->next;
     }
@@ -66,26 +66,28 @@ void LinkedList::insert_student_from_keyboard_sorted_by_matrikel(LinkedList_Elem
 }
 
 LinkedList_Element * LinkedList_Element::create_from_keyboard() {
-    LinkedList_Element * instance = new LinkedList_Element;
-
-    printf("Daten eingeben:\n");
-    printf("Name: ");
-    scanf("%s", instance->content.name);
-    printf("Matrikelnummer: ");
-    scanf("%d", &(instance->content.matrikel_no));
-    printf("Jahr der Immatrikulation: ");
-    scanf("%d", &(instance->content.immat_year));
-    printf("Studiengang: ");
-    scanf("%s", instance->content.study);
-
+    LinkedList_Element * instance;
+    instance = new LinkedList_Element(Student::create_from_keyboard());
     return instance;
 }
 
+LinkedList_Element::LinkedList_Element(Student * content) :
+    content(content)
+{
+}
+
+LinkedList_Element::~LinkedList_Element()
+{
+    delete this->content;
+}
+
+
+
 void LinkedList_Element::print_details() {
-    printf("Name: %s\n", this->content.name);
-    printf("Matrikelnummer: %d\n", this->content.matrikel_no);
-    printf("Jahr der Immatrikulation: %d\n", this->content.immat_year);
-    printf("Studiengang: %s\n", this->content.study);
+    printf("Name: %s\n", this->content->name);
+    printf("Matrikelnummer: %d\n", this->content->matrikel_no);
+    printf("Jahr der Immatrikulation: %d\n", this->content->immat_year);
+    printf("Studiengang: %s\n", this->content->study);
 }
 
 void LinkedList::print_all_elements() {
@@ -97,4 +99,21 @@ void LinkedList::print_all_elements() {
         printf("\n");
         element = element->next;
     }
+}
+
+Student * Student::create_from_keyboard()
+{
+    Student * instance = new Student;
+
+    printf("Daten eingeben:\n");
+    printf("Name: ");
+    scanf("%s", instance->name);
+    printf("Matrikelnummer: ");
+    scanf("%d", &(instance->matrikel_no));
+    printf("Jahr der Immatrikulation: ");
+    scanf("%d", &(instance->immat_year));
+    printf("Studiengang: ");
+    scanf("%s", instance->study);
+
+    return instance;
 }
