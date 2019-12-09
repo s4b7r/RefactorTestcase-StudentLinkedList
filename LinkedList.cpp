@@ -5,6 +5,7 @@
 #include <stdio.h>
 
 #include "LinkedList.h"
+#include "Student.h"
 
 void LinkedList::insert_element_into_list(LinkedList_Element * element) {
     element->next = this->head;
@@ -99,21 +100,4 @@ void LinkedList::print_all_elements() {
         printf("\n");
         element = element->next;
     }
-}
-
-Student * Student::create_from_keyboard()
-{
-    Student * instance = new Student;
-
-    printf("Daten eingeben:\n");
-    printf("Name: ");
-    scanf("%s", instance->name);
-    printf("Matrikelnummer: ");
-    scanf("%d", &(instance->matrikel_no));
-    printf("Jahr der Immatrikulation: ");
-    scanf("%d", &(instance->immat_year));
-    printf("Studiengang: ");
-    scanf("%s", instance->study);
-
-    return instance;
 }
