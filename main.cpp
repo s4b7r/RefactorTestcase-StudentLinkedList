@@ -35,7 +35,7 @@ int main(int argc, char ** argv) {
             remove_student_by_name(&list, get_name_from_keyboard(input_string));
             break;
         case 3:
-            print_student_by_name(&list, get_name_from_keyboard(input_string));
+            find_student_by_name(&list, get_name_from_keyboard(input_string))->print_details();
             break;
         case 4:
             print_all_students(&list);

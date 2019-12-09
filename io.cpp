@@ -5,10 +5,6 @@
 
 #include "io.h"
 
-void print_student_by_name(struct linked_list * list, char * name) {
-    find_student_by_name(list, name)->print_details();
-}
-
 char * get_name_from_keyboard(char * store) {
     printf("Name eingeben: ");
     scanf("%s", store);
