@@ -5,9 +5,7 @@
 #include "LinkedList.h"
 
 LinkedList_Element * LinkedList_Element::create_from_keyboard() {
-    LinkedList_Element * instance;
-    instance = new LinkedList_Element(Student::create_from_keyboard());
-    return instance;
+    return new LinkedList_Element(Student::create_from_keyboard());
 }
 
 LinkedList_Element::LinkedList_Element(Student * content) :
