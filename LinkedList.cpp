@@ -12,40 +12,6 @@ void LinkedList::insert_element_into_list(LinkedList_Element * element) {
     this->head = element;
 }
 
-void LinkedList::remove_element_from_list(LinkedList_Element * element) {
-    LinkedList_Element * previous_element;
-
-    if (this->head == element) {
-        this->head = element->next;
-        delete element;
-    }
-    else {
-        previous_element = this->head;
-        while (previous_element->next != element) {
-            previous_element = previous_element->next;
-        }
-
-        previous_element->next = element->next;
-        delete element;
-    }
-}
-
-LinkedList_Element * LinkedList::find_student_by_name(char * name) {
-    LinkedList_Element * element;
-
-    element = this->head;
-    while (element != 0 && strcmp(element->content->name, name) != 0) {
-        element = element->next;
-    }
-
-    return element;
-}
-
-void LinkedList::remove_student_by_name(char * name) {
-    remove_element_from_list(this->find_student_by_name(name));
-}
-
-
 void LinkedList::insert_student_from_keyboard_sorted_by_matrikel(LinkedList_Element * new_student) {
     LinkedList_Element * element;
     LinkedList_Element * previous;
@@ -66,31 +32,6 @@ void LinkedList::insert_student_from_keyboard_sorted_by_matrikel(LinkedList_Elem
     }
 }
 
-LinkedList_Element * LinkedList_Element::create_from_keyboard() {
-    LinkedList_Element * instance;
-    instance = new LinkedList_Element(Student::create_from_keyboard());
-    return instance;
-}
-
-LinkedList_Element::LinkedList_Element(Student * content) :
-    content(content)
-{
-}
-
-LinkedList_Element::~LinkedList_Element()
-{
-    delete this->content;
-}
-
-
-
-void LinkedList_Element::print_details() {
-    printf("Name: %s\n", this->content->name);
-    printf("Matrikelnummer: %d\n", this->content->matrikel_no);
-    printf("Jahr der Immatrikulation: %d\n", this->content->immat_year);
-    printf("Studiengang: %s\n", this->content->study);
-}
-
 void LinkedList::print_all_elements() {
     LinkedList_Element * element;
 
@@ -100,4 +41,37 @@ void LinkedList::print_all_elements() {
         printf("\n");
         element = element->next;
     }
+}
+
+LinkedList_Element * LinkedList::find_student_by_name(char * name) {
+    LinkedList_Element * element;
+
+    element = this->head;
+    while (element != 0 && strcmp(element->content->name, name) != 0) {
+        element = element->next;
+    }
+
+    return element;
+}
+
+void LinkedList::remove_element_from_list(LinkedList_Element * element) {
+    LinkedList_Element * previous_element;
+
+    if (this->head == element) {
+        this->head = element->next;
+        delete element;
+    }
+    else {
+        previous_element = this->head;
+        while (previous_element->next != element) {
+            previous_element = previous_element->next;
+        }
+
+        previous_element->next = element->next;
+        delete element;
+    }
+}
+
+void LinkedList::remove_student_by_name(char * name) {
+    remove_element_from_list(this->find_student_by_name(name));
 }
