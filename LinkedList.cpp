@@ -5,7 +5,6 @@
 #include <stdio.h>
 
 #include "LinkedList.h"
-#include "Student.h"
 
 void LinkedList::insert_element_into_list(LinkedList_Element * element) {
     element->next = this->head;
