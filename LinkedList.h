@@ -5,7 +5,7 @@ class LinkedList_Element
 public:
     static LinkedList_Element * create_from_keyboard();
 
-    class LinkedList_Element * next;
+    LinkedList_Element * next;
 
     char name[50];
     int matrikel_no;
