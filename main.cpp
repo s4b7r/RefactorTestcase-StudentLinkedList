@@ -12,8 +12,6 @@ int main(int argc, char ** argv) {
     int input;
     char input_string[50];
 
-    list.head = 0;
-
     do {
         printf("\n\nMenu\n");
         printf("0: Ende\n");

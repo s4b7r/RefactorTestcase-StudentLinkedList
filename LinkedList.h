@@ -25,7 +25,7 @@ public:
     void remove_student_by_name(char * name);
     void insert_student_from_keyboard_sorted_by_matrikel(LinkedList_Element * new_student);
 
-    LinkedList_Element * head;
+    LinkedList_Element * head = 0;
 };
 
 
