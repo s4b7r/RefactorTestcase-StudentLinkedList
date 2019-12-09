@@ -17,6 +17,8 @@ public:
 
 class LinkedList {
 public:
+    void print_all_elements();
+
     LinkedList_Element * head;
 };
 

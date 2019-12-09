@@ -10,14 +10,3 @@ char * get_name_from_keyboard(char * store) {
     scanf("%s", store);
     return store;
 }
-
-void print_all_students(LinkedList * list) {
-    LinkedList_Element * element;
-
-    element = list->head;
-    while (element != 0) {
-        element->print_details();
-        printf("\n");
-        element = element->next;
-    }
-}

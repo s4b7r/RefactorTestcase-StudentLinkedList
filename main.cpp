@@ -38,7 +38,7 @@ int main(int argc, char ** argv) {
             find_student_by_name(&list, get_name_from_keyboard(input_string))->print_details();
             break;
         case 4:
-            print_all_students(&list);
+            list.print_all_elements();
             break;
         case 5:
             insert_student_from_keyboard_sorted_by_matrikel(&list, LinkedList_Element::create_from_keyboard());

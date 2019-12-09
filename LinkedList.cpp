@@ -87,3 +87,14 @@ void LinkedList_Element::print_details() {
     printf("Jahr der Immatrikulation: %d\n", this->immat_year);
     printf("Studiengang: %s\n", this->study);
 }
+
+void LinkedList::print_all_elements() {
+    LinkedList_Element * element;
+
+    element = this->head;
+    while (element != 0) {
+        element->print_details();
+        printf("\n");
+        element = element->next;
+    }
+}
