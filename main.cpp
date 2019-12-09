@@ -29,7 +29,7 @@ int main(int argc, char ** argv) {
         switch (input)
         {
         case 1:
-            insert_student_from_keyboard_into_list(&list);
+            insert_element_into_list(&list, LinkedList_Element::create_from_keyboard());
             break;
         case 2:
             remove_student_by_name(&list, get_name_from_keyboard(input_string));

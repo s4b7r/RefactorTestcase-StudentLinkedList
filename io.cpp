@@ -5,10 +5,6 @@
 
 #include "io.h"
 
-void insert_student_from_keyboard_into_list(struct linked_list * list) {
-    insert_element_into_list(list, LinkedList_Element::create_from_keyboard());
-}
-
 void print_student_details(LinkedList_Element * student) {
     printf("Name: %s\n", student->name);
     printf("Matrikelnummer: %d\n", student->matrikel_no);
