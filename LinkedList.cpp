@@ -65,14 +65,18 @@ void insert_student_from_keyboard_sorted_by_matrikel(struct linked_list * list, 
     }
 }
 
-void LinkedList_Element::fill_from_keyboard() {
+LinkedList_Element * LinkedList_Element::create_from_keyboard() {
+    LinkedList_Element * instance = new LinkedList_Element;
+
     printf("Daten eingeben:\n");
     printf("Name: ");
-    scanf("%s", this->name);
+    scanf("%s", instance->name);
     printf("Matrikelnummer: ");
-    scanf("%d", &(this->matrikel_no));
+    scanf("%d", &(instance->matrikel_no));
     printf("Jahr der Immatrikulation: ");
-    scanf("%d", &(this->immat_year));
+    scanf("%d", &(instance->immat_year));
     printf("Studiengang: ");
-    scanf("%s", this->study);
+    scanf("%s", instance->study);
+
+    return instance;
 }

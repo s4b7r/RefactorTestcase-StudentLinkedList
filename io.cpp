@@ -5,16 +5,8 @@
 
 #include "io.h"
 
-LinkedList_Element * create_student_from_keyboard() {
-    LinkedList_Element * student;
-
-    student = new LinkedList_Element;
-    student->fill_from_keyboard();
-    return student;
-}
-
 void insert_student_from_keyboard_into_list(struct linked_list * list) {
-    insert_element_into_list(list, create_student_from_keyboard());
+    insert_element_into_list(list, LinkedList_Element::create_from_keyboard());
 }
 
 void print_student_details(LinkedList_Element * student) {

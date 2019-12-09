@@ -2,7 +2,6 @@
 
 #include "LinkedList.h"
 
-LinkedList_Element * create_student_from_keyboard();
 void insert_student_from_keyboard_into_list(struct linked_list * list);
 void print_student_details(LinkedList_Element * student);
 void print_student_by_name(struct linked_list * list, char * name);

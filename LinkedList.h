@@ -3,14 +3,14 @@
 class LinkedList_Element
 {
 public:
+    static LinkedList_Element * create_from_keyboard();
+
     class LinkedList_Element * next;
 
     char name[50];
     int matrikel_no;
     int immat_year;
     char study[50];
-
-    void fill_from_keyboard();
 };
 
 struct linked_list {
