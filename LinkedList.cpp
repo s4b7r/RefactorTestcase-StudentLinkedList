@@ -5,15 +5,16 @@
 #include <stdio.h>
 
 #include "LinkedList.h"
+#include "Student.h"
 
-void LinkedList::insert_element_into_list(LinkedList_Element * element) {
+void LinkedList::insert_element_into_list(LinkedList_Element<Student> * element) {
     element->next = this->head;
     this->head = element;
 }
 
-void LinkedList::insert_student_from_keyboard_sorted_by_matrikel(LinkedList_Element * new_student) {
-    LinkedList_Element * element;
-    LinkedList_Element * previous;
+void LinkedList::insert_student_from_keyboard_sorted_by_matrikel(LinkedList_Element<Student> * new_student) {
+    LinkedList_Element<Student> * element;
+    LinkedList_Element<Student> * previous;
 
     element = this->head;
     previous = 0;
@@ -32,7 +33,7 @@ void LinkedList::insert_student_from_keyboard_sorted_by_matrikel(LinkedList_Elem
 }
 
 void LinkedList::print_all_elements() {
-    LinkedList_Element * element;
+    LinkedList_Element<Student> * element;
 
     element = this->head;
     while (element != 0) {
@@ -42,8 +43,8 @@ void LinkedList::print_all_elements() {
     }
 }
 
-LinkedList_Element * LinkedList::find_student_by_name(char * name) {
-    LinkedList_Element * element;
+LinkedList_Element<Student> * LinkedList::find_student_by_name(char * name) {
+    LinkedList_Element<Student> * element;
 
     element = this->head;
     while (element != 0 && strcmp(element->content->name, name) != 0) {
@@ -53,8 +54,8 @@ LinkedList_Element * LinkedList::find_student_by_name(char * name) {
     return element;
 }
 
-void LinkedList::remove_element_from_list(LinkedList_Element * element) {
-    LinkedList_Element * previous_element;
+void LinkedList::remove_element_from_list(LinkedList_Element<Student> * element) {
+    LinkedList_Element<Student> * previous_element;
 
     if (this->head == element) {
         this->head = element->next;
