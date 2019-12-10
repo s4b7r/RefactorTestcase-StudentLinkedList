@@ -10,7 +10,7 @@ public:
     void remove_element_from_list(LinkedList_Element<T> * element);
     LinkedList_Element<T> * find_element_by_name(char * name);
     void remove_element_by_name(char * name);
-    void insert_student_from_keyboard_sorted_by_matrikel(LinkedList_Element<T> * new_student);
+    void insert_student_sorted_by_matrikel(LinkedList_Element<T> * new_student);
 
     LinkedList_Element<T> * head = 0;
 };
@@ -22,7 +22,7 @@ void LinkedList<T>::insert_element_into_list(LinkedList_Element<T> * element) {
 }
 
 template <class T>
-void LinkedList<T>::insert_student_from_keyboard_sorted_by_matrikel(LinkedList_Element<T> * new_student) {
+void LinkedList<T>::insert_student_sorted_by_matrikel(LinkedList_Element<T> * new_student) {
     LinkedList_Element<T> * element;
     LinkedList_Element<T> * previous;
 

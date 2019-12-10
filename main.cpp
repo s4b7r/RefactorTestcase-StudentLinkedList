@@ -40,7 +40,7 @@ int main(int argc, char ** argv) {
             list.print_all_elements();
             break;
         case 5:
-            list.insert_student_from_keyboard_sorted_by_matrikel(LinkedList_Element<Student>::create_from_keyboard());
+            list.insert_student_sorted_by_matrikel(LinkedList_Element<Student>::create_from_keyboard());
             break;
         default:
             break;
