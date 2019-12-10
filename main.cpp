@@ -6,9 +6,10 @@
 
 #include "LinkedList.h"
 #include "io.h"
+#include "Student.h"
 
 int main(int argc, char ** argv) {
-    LinkedList list;
+    LinkedList<Student> list;
     int input;
     char input_string[50];
 
