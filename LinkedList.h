@@ -8,8 +8,8 @@ public:
     void print_all_elements();
     void insert_element_into_list(LinkedList_Element<T> * element);
     void remove_element_from_list(LinkedList_Element<T> * element);
-    LinkedList_Element<T> * find_student_by_name(char * name);
-    void remove_student_by_name(char * name);
+    LinkedList_Element<T> * find_element_by_name(char * name);
+    void remove_element_by_name(char * name);
     void insert_student_from_keyboard_sorted_by_matrikel(LinkedList_Element<T> * new_student);
 
     LinkedList_Element<T> * head = 0;
@@ -55,7 +55,7 @@ void LinkedList<T>::print_all_elements() {
 }
 
 template <class T>
-LinkedList_Element<T> * LinkedList<T>::find_student_by_name(char * name) {
+LinkedList_Element<T> * LinkedList<T>::find_element_by_name(char * name) {
     LinkedList_Element<T> * element;
 
     element = this->head;
@@ -86,6 +86,6 @@ void LinkedList<T>::remove_element_from_list(LinkedList_Element<T> * element) {
 }
 
 template <class T>
-void LinkedList<T>::remove_student_by_name(char * name) {
-    remove_element_from_list(this->find_student_by_name(name));
+void LinkedList<T>::remove_element_by_name(char * name) {
+    remove_element_from_list(this->find_element_by_name(name));
 }

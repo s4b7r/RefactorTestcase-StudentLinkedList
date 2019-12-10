@@ -31,10 +31,10 @@ int main(int argc, char ** argv) {
             list.insert_element_into_list(LinkedList_Element<Student>::create_from_keyboard());
             break;
         case 2:
-            list.remove_student_by_name(get_name_from_keyboard(input_string));
+            list.remove_element_by_name(get_name_from_keyboard(input_string));
             break;
         case 3:
-            list.find_student_by_name(get_name_from_keyboard(input_string))->print_details();
+            list.find_element_by_name(get_name_from_keyboard(input_string))->print_details();
             break;
         case 4:
             list.print_all_elements();
