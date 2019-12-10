@@ -21,6 +21,11 @@ Student * Student::create_from_keyboard()
     return instance;
 }
 
+int Student::get_index()
+{
+    return this->matrikel_no;
+}
+
 void Student::print_details()
 {
     printf("Name: %s\n", this->name);
